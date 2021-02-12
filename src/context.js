@@ -12,7 +12,7 @@ class RoomProvider extends Component {
   state = { 
     rooms: [],
     sortedRooms: [],
-    FeaturedRooms: [],
+    featuredRooms: [],
     loading: true
   };
 
@@ -29,7 +29,14 @@ class RoomProvider extends Component {
   // get data
   componentDidMount() {
     let rooms = this.formatData(items);
-    console.log("----", rooms)
+    let featuredRooms = rooms.filter(rm => rm.featured === true )
+    // console.log("----", rooms)
+    this.setState({
+      rooms,
+      featuredRooms,
+      sortedRooms: rooms,
+      loading: false
+    })
   }
 
   render() {
