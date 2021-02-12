@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import items from './data'; // naming to match Contentful
 
 const RoomContext = React.createContext();
 /**Typical setup
@@ -8,7 +9,29 @@ const RoomContext = React.createContext();
  */
 
 class RoomProvider extends Component {
-  state = { name: 'kate'};
+  state = { 
+    rooms: [],
+    sortedRooms: [],
+    FeaturedRooms: [],
+    loading: true
+  };
+
+  // method to format the data object
+  formatData(items) {
+    return items.map(item => {
+      const id = item.sys.id;
+      const images = item.fields.images.map(img => img.fields.file.url);
+
+      return {...item.fields, id, images}
+    })
+  }
+
+  // get data
+  componentDidMount() {
+    let rooms = this.formatData(items);
+    console.log("----", rooms)
+  }
+
   render() {
     return (
       // passing every thing in the state object
