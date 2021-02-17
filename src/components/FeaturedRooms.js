@@ -1,6 +1,8 @@
 import React, { Component } from 'react';
 import { RoomContext } from '../context';
 import Loading from '../components/Loading';
+import Room from './Room';
+import Title from './Title';
 
 export default class FeaturedRooms extends Component {
   // can be access by class component only
@@ -9,15 +11,19 @@ export default class FeaturedRooms extends Component {
   render() {
     // the state object that is the value passed from RoomContext in context.js
     // give an alias name as rooms
-    const {featuredRooms : rooms} = this.context;
+    let { loading, featuredRooms : rooms} = this.context;
 
-    console.log("featuredRooms", rooms)
+    rooms = rooms.map(room => {
+      return <Room key={room.id} room={room} />
+    })
     
     return (
-      <div>
-        this is FeaturedRooms 
-        <Loading />
-      </div>
+      <section className="featured-rooms">
+        <Title title="featured rooms" />
+        <div className="featured-rooms-center">
+          {loading ? <Loading /> : rooms }
+        </div>
+      </section>
     )
   }
 }
