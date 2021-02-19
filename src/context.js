@@ -35,6 +35,11 @@ class RoomProvider extends Component {
     })
   }
 
+  getRoom = slug => {
+    // find return an object while filter will return an array of object
+    return [...this.state.rooms].find(room => room.slug === slug)
+  }
+
   // get data
   componentDidMount() {
     // format the imported data/items
@@ -52,7 +57,12 @@ class RoomProvider extends Component {
   render() {
     return (
       // passing every thing in the state object
-      <RoomContext.Provider value={{...this.state}}>
+      <RoomContext.Provider 
+        value={{
+          ...this.state,
+          getRoom: this.getRoom
+        }}
+      >
         {this.props.children}
       </RoomContext.Provider>
     )
