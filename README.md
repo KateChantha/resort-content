@@ -21,4 +21,4 @@ SideNote: We can place Banner.js and button inside Hero.js as one unit(make it e
 - Without componentDidMount, we have to catch 'undefined' room in the render. So we can only have choice to show error message or render the page.
 - Usually we set up with componentDidMOunt when we want to make an API call. If we set with componentDidMount, we can have option to display loading status.
 
-7. In RoomInfo.js, we will use style-component so that we can give a backgound image url to each room type dynamically
+7. In RoomInfo.js, we will use style-component so that we can give a backgound image url to each room type dynamically since data (imageUrl) comes from backend.
