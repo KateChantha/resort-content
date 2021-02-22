@@ -1,9 +1,10 @@
 import React, { Component } from 'react';
 import defaultBcg from '../images/room-1.jpeg';
 import Hero from '../components/Hero';
+import StyledHero from '../components/StyledHero';
 import Banner from '../components/Banner';
 import {Link} from 'react-router-dom';
-import {RoomContecxt, RoomContext} from '../context';
+import { RoomContext } from '../context';
 
 export default class RoomInfo extends Component {
   constructor(props) {
@@ -26,7 +27,7 @@ export default class RoomInfo extends Component {
   render() {
     const {getRoom} = this.context;
     const room = getRoom(this.state.slug)
-    console.log(room)
+    // console.log(room)
     // we will first get room -> undefined when it's sill loading. shortly after that we'll get the room object.
     if(!room) {
       return (
@@ -39,11 +40,25 @@ export default class RoomInfo extends Component {
       )
     }
 
-    
+    const {
+      name,
+      description,
+      capacity,
+      size,
+      price,
+      extras,
+      breakfast,
+      pets,
+      images
+    } = room;
     return (
-      <div>
-        this is single room page
-      </div>
+      <StyledHero img={images[0] || this.state.defaultBcg}>
+        <Banner title={`${name} room`}>
+          <Link to="/rooms" className="btn-primary">
+            back to rooms
+          </Link>
+        </Banner>
+      </StyledHero>
     )
   }
 }

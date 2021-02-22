@@ -17,8 +17,12 @@ SideNote: We can place Banner.js and button inside Hero.js as one unit(make it e
 - a formating data of all rooms
 - a mothod getRoom to find a room by slug that will be used in RoomInfo page. Reason we not define getRoom function in RoomInfo.js just to make RoomInfo code small.
 
-6. The way RoomInfo page is set up without componentDidMount. Note: we can access props from react-router thru both constructor fucntion or in componentDidMount
+6. The way RoomInfo page is set up without componentDidMount. Note: we can access props from react-router thru either constructor function or in componentDidMount
 - Without componentDidMount, we have to catch 'undefined' room in the render. So we can only have choice to show error message or render the page.
 - Usually we set up with componentDidMOunt when we want to make an API call. If we set with componentDidMount, we can have option to display loading status.
 
 7. In RoomInfo.js, we will use style-component so that we can give a backgound image url to each room type dynamically since data (imageUrl) comes from backend.
+- to do so, we will update Hero component to be dynamic. In this project, we will create a styled compornent for Hero called it StyledHero.js
+- move/ omit .roomsHero style in App.css (line 160) and move those styles to StyledHero.js instead.
+- in StyledHero.js, we now can dinamically render hero image through props that pass from parent component-> RoomInfo.js (which gets room data from context)
+- NOTE: notice that, in StyledHero.js and RoomInfo.js, both set a fallback default image which is over-kill to do so. We can actually set the default image only one place. Here just to demostarte how to set the dafault image.
