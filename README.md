@@ -29,4 +29,7 @@ SideNote: We can place Banner.js and button inside Hero.js as one unit(make it e
 
 8. TODO: in each page, replaced Hero component by styledHero and then romove/ omit .roomsHero in App.css (line 160).
 
-9. RoomsContainer.js recieve "value" object from context. It's wraped by RoomConsumer 
+9. RoomsContainer.js recieve "value" object from context.
+There are 2 ways to do it... 
+-  9.1 It's wraped by RoomConsumer and write a callback function in the RoomsContainer
+-  9.2 It's wraped by withRoomConsumer() which is a HOC written in context.js 

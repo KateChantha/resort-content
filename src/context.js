@@ -71,4 +71,15 @@ class RoomProvider extends Component {
 
 const RoomConsumer = RoomContext.Consumer;
 
+// HOC that will be used in RoomContainer.js
+export function withRoomConsumer(Component) {
+  return function ConsumerWrapper(props) {
+    return (
+      <RoomConsumer>
+        {value => <Component {...props} context={value} />}
+      </RoomConsumer>
+    )
+  }
+}
+
 export { RoomProvider, RoomConsumer, RoomContext }
