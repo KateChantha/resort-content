@@ -28,3 +28,5 @@ SideNote: We can place Banner.js and button inside Hero.js as one unit(make it e
 - NOTE: notice that, in StyledHero.js and RoomInfo.js, both set a fallback default image which is over-kill to do so. We can actually set the default image only one place. Here just to demostarte how to set the dafault image.
 
 8. TODO: in each page, replaced Hero component by styledHero and then romove/ omit .roomsHero in App.css (line 160).
+
+9. RoomsContainer.js recieve "value" object from context. It's wraped by RoomConsumer 

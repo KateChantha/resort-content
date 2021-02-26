@@ -11,7 +11,7 @@ const RoomContext = React.createContext();
 
  /** Another way to setup context API
   * to format data before passing in as a value
-  * by creating a class component that formating data/state
+  * by creating a class component that formating data/state - NOTE: this way works only for a class component
   * then returns <RoomContecxt.Provider value={ /formated state/ }>
   * in index.js
   * <RoomProvider><App /></RoomProvider>
