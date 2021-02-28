@@ -33,3 +33,18 @@ SideNote: We can place Banner.js and button inside Hero.js as one unit(make it e
 There are 2 ways to do it... 
 -  9.1 It's wraped by RoomConsumer and write a callback function in the RoomsContainer
 -  9.2 It's wraped by withRoomConsumer() which is a HOC written in context.js 
+
+10. Rooms data managment. We pass "rooms" data from context.js to RoomFilter component, them RoomFilter will pass "sorted room" data to RoomList component.
+
+11. Very Important note: in term of display each Room in the RoomList. See App.css 
+```
+.roomslist-center {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(270px, 1fr));
+}
+```
+we set repeat(auto-fill,...) with auto-fill instead of auto-fit, this way Room card will not stretch to fit the whole div.
+
+12. Filter rooms, work with the option control inputs and onChage
+- in context.js, set up some value & default value in context state
+- set up the onChange handler function and pass them down to RoomFilter component then attched tnem to each input

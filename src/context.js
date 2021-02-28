@@ -21,7 +21,17 @@ class RoomProvider extends Component {
     rooms: [],
     sortedRooms: [],
     featuredRooms: [],
-    loading: true
+    loading: true,
+    // set up default value for the option control inputs
+    type: "all",
+    capacity: 1,
+    price: 0,
+    minPrice: 0,
+    maxPrice: 0,
+    minSize: 0,
+    maxSize: 0,
+    breakfast: false,
+    pets: false
   };
 
   // method to format the data object
@@ -46,11 +56,20 @@ class RoomProvider extends Component {
     let rooms = this.formatData(items);
     let featuredRooms = rooms.filter(rm => rm.featured === true )
     
+    // set up the maxPrice and maxSize from data in database
+    let maxPrice = Math.max(...rooms.map(item => item.price));
+    let maxSize = Math.max(...rooms.map(item => item.size));
+
     this.setState({
       rooms,
       featuredRooms,
       sortedRooms: rooms,
-      loading: false
+      loading: false,
+      // when page mount, 
+      // set price range contol input active at maxPrice
+      price: maxPrice,
+      maxPrice,
+      maxSize
     })
   }
 
