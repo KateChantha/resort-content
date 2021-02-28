@@ -48,3 +48,5 @@ we set repeat(auto-fill,...) with auto-fill instead of auto-fit, this way Room c
 12. Filter rooms, work with the option control inputs and onChage
 - in context.js, set up some value & default value in context state
 - set up the onChange handler function and pass them down to RoomFilter component then attched tnem to each input
+
+13. In RoomFilter.js, we access context data by using useContext hooks instead of HOC. useContext can be used with a fuscntional component.

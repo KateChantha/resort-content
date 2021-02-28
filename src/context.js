@@ -55,7 +55,7 @@ class RoomProvider extends Component {
     // format the imported data/items
     let rooms = this.formatData(items);
     let featuredRooms = rooms.filter(rm => rm.featured === true )
-    
+
     // set up the maxPrice and maxSize from data in database
     let maxPrice = Math.max(...rooms.map(item => item.price));
     let maxSize = Math.max(...rooms.map(item => item.size));
@@ -73,13 +73,24 @@ class RoomProvider extends Component {
     })
   }
 
+  handleChange = (event) => {
+    const {type, name, value } = event.target
+    console.log ("in handleChange",type, name, value )
+  }
+
+  filterRooms = () => {
+
+    console.log("call filterRooms function")
+  }
+
   render() {
     return (
       // passing every thing in the state object
       <RoomContext.Provider 
         value={{
           ...this.state,
-          getRoom: this.getRoom
+          getRoom: this.getRoom,
+          handleChange: this.handleChange
         }}
       >
         {this.props.children}
