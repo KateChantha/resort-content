@@ -28,16 +28,24 @@ const RoomFilter = ({rooms}) => {
     pets
   } = context;
 
-  /** get unique room types **/
+  /** get unique room types & map to JSX **/
   let types = getUnique(rooms, "type");
   // add option all
-  types = ["all", ...types];
-  // map types options to JSX
-  types = types.map((item, idx) => (
-    <option key={idx} value={item}>
-      {item}
-    </option>
-  ));
+  types = ["all", ...types]
+      .map((item, idx) => (
+        <option key={idx} value={item}>
+          {item}
+        </option>
+      ));
+
+  /** get unique capacity & map to JSX **/ 
+  let roomCapacity = 
+        getUnique(rooms, "capacity")
+        .map((item, idx) => (
+          <option key={idx} value={item}>
+            {item}
+          </option>
+        ));
 
   return (
     <section className="filter-container">
@@ -57,6 +65,20 @@ const RoomFilter = ({rooms}) => {
           </select>
         </div>
         {/* end select type */}
+        {/* guests capacity  */}
+        <div className="form-group">
+          <label htmlFor="capacity">Guests</label>
+          <select
+            name="capacity"
+            id="capacity"
+            onChange={handleChange}
+            className="form-control"
+            value={capacity}
+          >
+            {roomCapacity}
+          </select>
+        </div>
+        {/* end of guests capacity */}
       </form>
     </section>
   )
