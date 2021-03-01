@@ -50,3 +50,9 @@ we set repeat(auto-fill,...) with auto-fill instead of auto-fit, this way Room c
 - set up the onChange handler function and pass them down to RoomFilter component then attched tnem to each input
 
 13. In RoomFilter.js, we access context data by using useContext hooks instead of HOC. useContext can be used with a fuscntional component.
+- name attribute in select will be use in handleChange function, and it refer to "type" property in context.
+```
+<select name="type" value={type} />
+```
+- For value attribute in select, instead of hard coding the value options, we want to get the value dynamicly from database. And, we want only unique value of room "type" that are in database fileds: { type: single }. 
+- RoomsFilter get "rooms" data as a props from RoomContainer. Note: Or go with option of getting "rooms" data from context api as well. 
