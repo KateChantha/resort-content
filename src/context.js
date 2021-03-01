@@ -81,7 +81,7 @@ class RoomProvider extends Component {
     const name = target.name;
     console.log(name, value);
 
-    // first, set option type with value(room type)
+    // first, set name(input control type) with value(input value)
     // then invoke cb filterRooms function
     this.setState({
       [name]: value
@@ -100,12 +100,12 @@ class RoomProvider extends Component {
       pets
     } = this.state;
     
-    // all the rooms
-    let tempRooms = [...rooms];
-
     // tranfrom input string value from DOM 
     capacity = parseInt(capacity);
+    price = parseInt(price);
 
+    // all the rooms
+    let tempRooms = [...rooms];
     // filter by room type
     if (type !== "all") {
       tempRooms  = tempRooms.filter(room => room.type === type)
@@ -113,6 +113,20 @@ class RoomProvider extends Component {
     // filter by capacity
     if (capacity !== 1) {
       tempRooms = tempRooms.filter(room => room.capacity >= capacity);
+    }
+    // filter by price
+    tempRooms = tempRooms.filter(room => room.price <= price);
+    //filter by size
+    tempRooms = tempRooms.filter(
+      room => room.size >= minSize && room.size <= maxSize
+    );
+    //filter by breakfast
+    if (breakfast) {
+    tempRooms = tempRooms.filter(room => room.breakfast === true);
+    }
+    //filter by pets
+    if (pets) {
+      tempRooms = tempRooms.filter(room => room.pets === true);
     }
 
     this.setState({
