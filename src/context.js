@@ -74,13 +74,41 @@ class RoomProvider extends Component {
   }
 
   handleChange = (event) => {
-    const {type, name, value } = event.target
-    console.log ("in handleChange",type, name, value )
+    const target = event.target;
+    const value = target.type === "checkbox" 
+                  ? target.checked 
+                  : target.value;
+    const name = target.name;
+    console.log(name, value);
+
+    // first, set option type with value(room type)
+    // then invoke cb filterRooms function
+    this.setState({
+      [name]: value
+    }, this.filterRooms)
   }
 
   filterRooms = () => {
+    let {
+      rooms,
+      type,
+      capacity,
+      price,
+      minSize,
+      maxSize,
+      breakfast,
+      pets
+    } = this.state;
 
-    console.log("call filterRooms function")
+    let tempRooms = [...rooms];
+    if (type !== "all") {
+      tempRooms  = tempRooms.filter(room => room.type === type)
+    }
+
+    this.setState({
+      sortedRooms: tempRooms
+    });
+    
   }
 
   render() {
