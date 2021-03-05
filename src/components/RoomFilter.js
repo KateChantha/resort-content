@@ -1,6 +1,5 @@
 import React from 'react';
 import { useContext } from 'react'; // works with FC
-import { types } from 'util';
 import { RoomContext } from "../context";
 import Title from "./Title";
 
@@ -25,8 +24,11 @@ const RoomFilter = ({rooms}) => {
     minSize,
     maxSize,
     breakfast,
-    pets
+    pets,
+    dateRange
   } = context;
+
+  console.log("Date range in rm filter", dateRange)
 
   /** get unique room types & map to JSX **/
   let types = getUnique(rooms, "type");
@@ -139,6 +141,9 @@ const RoomFilter = ({rooms}) => {
         </div>
         {/* end of extras type */}
       </form>
+      <h1>{dateRange.nightStay}</h1>
+      <h1>{dateRange.startDate}</h1>
+      <h1>{dateRange.endDate}</h1>
     </section>
   )
 }
