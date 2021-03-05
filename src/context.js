@@ -31,7 +31,8 @@ class RoomProvider extends Component {
     minSize: 0,
     maxSize: 0,
     breakfast: false,
-    pets: false
+    pets: false,
+    nightStay: 1
   };
 
   // method to format the data object
@@ -69,7 +70,7 @@ class RoomProvider extends Component {
       // set price range contol input active at maxPrice
       price: maxPrice,
       maxPrice,
-      maxSize
+      maxSize,
     })
   }
 
@@ -86,6 +87,13 @@ class RoomProvider extends Component {
     this.setState({
       [name]: value
     }, this.filterRooms)
+  }
+
+  handleDateRange = (nights) => {
+    this.setState({
+      ...this.state,
+      nightStay: nights
+    })
   }
 
   filterRooms = () => {
@@ -142,7 +150,8 @@ class RoomProvider extends Component {
         value={{
           ...this.state,
           getRoom: this.getRoom,
-          handleChange: this.handleChange
+          handleChange: this.handleChange,
+          handleDateRange: this.handleDateRange
         }}
       >
         {this.props.children}

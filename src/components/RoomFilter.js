@@ -24,7 +24,8 @@ const RoomFilter = ({rooms}) => {
     minSize,
     maxSize,
     breakfast,
-    pets
+    pets,
+    nightStay
   } = context;
 
   /** get unique room types & map to JSX **/
@@ -138,6 +139,7 @@ const RoomFilter = ({rooms}) => {
         </div>
         {/* end of extras type */}
       </form>
+      <h1>{nightStay}</h1>
     </section>
   )
 }

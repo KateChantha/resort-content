@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { withRoomConsumer } from '../context';
 import { useContext } from 'react'; 
 import { RoomContext } from "../context";
@@ -15,7 +15,7 @@ const getUnique = (items, value) => {
 const CheckAvailibility = ({context}) => {
   const {rooms} = context;
   const contextFilter = useContext(RoomContext);
-  const { handleChange, capacity } = contextFilter;
+  const { handleChange, capacity, handleDateRange } = contextFilter;
 
   const [dateRange, setDateRange] = useState({
     selection1: {
@@ -43,7 +43,13 @@ const CheckAvailibility = ({context}) => {
     return Math.ceil((end - start) / 86400000);
   }
 
-  console.log("dateRange",days_passed(dateRange.selection1.startDate, dateRange.selection1.endDate) )
+  useEffect(() => {
+    const nights = days_passed(dateRange.selection1.startDate, dateRange.selection1.endDate);
+    handleDateRange(nights)
+  }, [dateRange])
+
+
+  // console.log("dateRange",days_passed(dateRange.selection1.startDate, dateRange.selection1.endDate) )
 
   return (
     <section className="filter-container">
