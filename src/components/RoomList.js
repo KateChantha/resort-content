@@ -6,7 +6,10 @@ const RoomList = ({rooms}) => {
     return (
       <div className="empty-search">
         <h3>
-          unfortunately no rooms matched your search parameters
+        We apologize for the inconvenience. There are no rooms available matching your search criteria.
+        </h3>
+        <h3>
+        Please try selecting alternate dates, modifying your search or filter options, or contacting the hotel for assistance.
         </h3>
       </div>
     )
