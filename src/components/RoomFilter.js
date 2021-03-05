@@ -25,8 +25,10 @@ const RoomFilter = ({rooms}) => {
     maxSize,
     breakfast,
     pets,
-    nightStay
+    dateRange
   } = context;
+
+  console.log("Date range in rm filter", dateRange)
 
   /** get unique room types & map to JSX **/
   let types = getUnique(rooms, "type");
@@ -139,7 +141,9 @@ const RoomFilter = ({rooms}) => {
         </div>
         {/* end of extras type */}
       </form>
-      <h1>{nightStay}</h1>
+      <h1>{dateRange.nightStay}</h1>
+      <h1>{dateRange.startDate}</h1>
+      <h1>{dateRange.endDate}</h1>
     </section>
   )
 }

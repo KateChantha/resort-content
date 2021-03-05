@@ -22,12 +22,7 @@ const CheckAvailibility = ({context}) => {
       startDate: addDays(new Date(), 0),
       endDate: addDays(new Date(), 1),
       key: 'selection1'
-    },
-    // selection2: {
-    //   startDate: addDays(new Date(), 4),
-    //   endDate: addDays(new Date(), 8),
-    //   key: 'selection2'
-    // },
+    }
   });
 
   /** get unique capacity & map to JSX **/ 
@@ -45,17 +40,14 @@ const CheckAvailibility = ({context}) => {
 
   useEffect(() => {
     const nights = days_passed(dateRange.selection1.startDate, dateRange.selection1.endDate);
-    handleDateRange(nights)
+    // handleDateRange(nights)
+    handleDateRange({...dateRange.selection1}, nights)
   }, [dateRange])
-
-
-  // console.log("dateRange",days_passed(dateRange.selection1.startDate, dateRange.selection1.endDate) )
 
   return (
     <section className="filter-container">
       <DateRange
         onChange={item => setDateRange({ ...dateRange, ...item })}
-        // ranges={[dateRange.selection1, dateRange.selection2]}
         ranges={[dateRange.selection1]}
       />
       <form className="filter-form">
