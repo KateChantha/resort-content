@@ -12,11 +12,12 @@ const Home = () => {
       <Hero>
         
         <Banner title="luxurious rooms" subtitle="deluxe rooms starting at $299">
-        <CheckAvailibility />
+        
           <Link to="/rooms" className="btn-primary">
             check availitbility
           </Link>
         </Banner>
+        <CheckAvailibility />
       </Hero>
       <Servives />   
       <FeaturedRooms />
