@@ -39,6 +39,12 @@ const CheckAvailibility = ({context}) => {
           </option>
         ));
 
+  function days_passed(start, end) {
+    return Math.ceil((end - start) / 86400000);
+  }
+
+  console.log("dateRange",days_passed(dateRange.selection1.startDate, dateRange.selection1.endDate) )
+
   return (
     <section className="filter-container">
       <DateRange
