@@ -50,6 +50,18 @@ class RoomProvider extends Component {
     })
   }
 
+  // handleDateRange = (dateRange,nights) => {
+  //   this.setState({
+  //     ...this.state,
+  //     nightStay: nights,
+  //     dateRange: {
+  //       startDate: dateRange.startDate.toString(),
+  //       endDate: dateRange.endDate.toString(),
+  //       nightStay: nights
+  //     }
+  //   })
+  // }
+
 
   // method to format the data object
   formatData(items) {
