@@ -24,11 +24,8 @@ const RoomFilter = ({rooms}) => {
     minSize,
     maxSize,
     breakfast,
-    pets,
-    dateRange
+    pets
   } = context;
-
-  console.log("Date range in rm filter", dateRange) //-----
 
   /** get unique room types & map to JSX **/
   let types = getUnique(rooms, "type");

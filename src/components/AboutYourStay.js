@@ -1,19 +1,18 @@
 import React from 'react';
 import { useContext } from 'react'; // works with FC
 import { RoomContext } from "../context";
-import Rooms from '../pages/Rooms';
 import Title from "./Title";
 
 const AboutYourStay = () => {
   const context = useContext(RoomContext);
-  const { capacity, dateRange } = context;
+  // const { capacity, dateRange } = context;
+  const { capacity, nightStay  } = context;
   
-  const formatDate = (date) => {
-    const dateArray = date.split(" ");
-    return dateArray[0]+","+dateArray[1]+" "+dateArray[2]+","+dateArray[3]
-  }
-
-  
+  // const formatDate = (date) => {
+  //   const dateArray = date.split(" ");
+  //   if (!dateArray) return;
+  //   else return dateArray[0]+","+dateArray[1]+" "+dateArray[2]+","+dateArray[3]
+  // }
 
   return (
     <div>
@@ -26,10 +25,12 @@ const AboutYourStay = () => {
         <span>Check-Out</span>
         <span>Before 11:00 AM</span>
       </div>
-      <p>{formatDate(dateRange.startDate)}</p>
-      <p>{formatDate(dateRange.endDate)}</p>
+      {/* <p>{formatDate(dateRange.startDate)}</p>
+      <p>{formatDate(dateRange.endDate)}</p> */}
       <p> {capacity}{capacity > 1 ? " Guests": " Guest" }</p>
-      <p> {dateRange.nightStay}{dateRange.nightStay > 1 ? " Night": " Night" }</p>
+      {/* <p> {dateRange.nightStay}{dateRange.nightStay > 1 ? " Night": " Night" }</p> */}
+      <p> {nightStay}{nightStay > 1 ? " Night": " Night" }</p>
+      <div></div>
       <div>
         <span>Total</span>
         <span>$0.00</span>

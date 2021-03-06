@@ -38,10 +38,19 @@ const CheckAvailibility = ({context}) => {
     return Math.ceil((end - start) / 86400000);
   }
 
+  // useEffect(() => {
+  //   const nights = days_passed(dateRange.selection1.startDate, dateRange.selection1.endDate);
+    
+  //   console.log('in useEffect check avai',dateRange.selection1 , "nights", nights)
+
+  //   handleDateRange({...dateRange.selection1}, nights)
+  // }, [dateRange])
+
+  console.log('Befre useEffect check avai: dateRange',dateRange )
   useEffect(() => {
-    const nights = days_passed(dateRange.selection1.startDate, dateRange.selection1.endDate);
-    // handleDateRange(nights)
-    handleDateRange({...dateRange.selection1}, nights)
+  //  console.log('in useEffect check avai: dateRange',dateRange )
+   console.log('in useEffect check avai: dateRange.selection1',{...dateRange.selection1} )
+
   }, [dateRange])
 
   return (
@@ -50,8 +59,8 @@ const CheckAvailibility = ({context}) => {
         onChange={item => setDateRange({ ...dateRange, ...item })}
         ranges={[dateRange.selection1]}
       />
-      <form className="filter-form">
         {/* guests capacity  */}
+      <form className="filter-form">
         <div className="form-group">
           <label htmlFor="capacity">How Many Guests?</label>
           <select
@@ -63,9 +72,9 @@ const CheckAvailibility = ({context}) => {
           >
             {roomCapacity}
           </select>
-        </div>
-        {/* end of guests capacity */}
+        </div>       
       </form>
+      {/* end of guests capacity */}
     </section>
   )
 }
