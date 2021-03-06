@@ -1,6 +1,7 @@
 import React from 'react';
 import RoomFilter from './RoomFilter';
 import RoomList from './RoomList';
+import AboutYourStay from './AboutYourStay';
 import { withRoomConsumer } from '../context';
 import Loading from './Loading';
 
@@ -16,6 +17,7 @@ const RoomsContainer = ({context}) => {
           : (
               <div>
                 <RoomFilter rooms={rooms}/>
+                <AboutYourStay />
                 <RoomList rooms={sortedRooms}/>
               </div>
             );
