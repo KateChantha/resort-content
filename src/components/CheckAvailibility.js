@@ -6,11 +6,18 @@ import { DateRange } from 'react-date-range';
 import { addDays } from 'date-fns';
 import 'react-date-range/dist/styles.css'; 
 import 'react-date-range/dist/theme/default.css'; 
+import './CheckAvilibility.css'
 
-/** Helper Function **/ 
+/** Helper Functions **/ 
 const getUnique = (items, value) => {
   return [...new Set(items.map(item => item[value]))]
 }
+
+const days_passed = (start, end) => {
+  return Math.ceil((end - start) / 86400000);
+}
+
+
 
 const CheckAvailibility = ({context}) => {
   const {rooms} = context;
@@ -33,10 +40,6 @@ const CheckAvailibility = ({context}) => {
             {item}
           </option>
         ));
-
-  function days_passed(start, end) {
-    return Math.ceil((end - start) / 86400000);
-  }
 
   // useEffect(() => {
   //   const nights = days_passed(dateRange.selection1.startDate, dateRange.selection1.endDate);
@@ -67,7 +70,7 @@ const CheckAvailibility = ({context}) => {
             name="capacity"
             id="capacity"
             onChange={handleChange}
-            className="form-control"
+            className="form-control check-guest"
             value={capacity}
           >
             {roomCapacity}
