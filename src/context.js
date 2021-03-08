@@ -32,13 +32,52 @@ class RoomProvider extends Component {
     maxSize: 0,
     breakfast: false,
     pets: false,
-    // nightStay: 1,
     dateRange: {
-      startDate: null,
-      endDate: null,
+      startDate: new Date().toString(),
+      endDate: new Date().toString(),
       nightStay: 1
     }
   };
+
+  handleDateRange = (dateRange) => {
+
+    //== Get DATA (componentDidmount) clone ==
+    let rooms = this.formatData(items);
+    let featuredRooms = rooms.filter(rm => rm.featured === true )
+
+    // set up the maxPrice and maxSize from data in database
+    let maxPrice = Math.max(...rooms.map(item => item.price));
+    let maxSize = Math.max(...rooms.map(item => item.size));
+
+    this.setState({
+      rooms,
+      featuredRooms,
+      sortedRooms: rooms,
+      loading: false,
+      // when page mount, 
+      // set price range contol input active at maxPrice
+      price: maxPrice,
+      maxPrice,
+      maxSize,
+      dateRange: {
+        startDate: dateRange.startDate.toString(),
+        endDate: dateRange.endDate.toString(),
+        nightStay: dateRange.nightStay
+      }
+    })
+
+    //==== End of Get DATA ===
+    
+    // this.setState({
+    //   ...this.state,
+    //   // nightStay: nights,
+    //   dateRange: {
+    //     startDate: dateRange.startDate.toString(),
+    //     endDate: dateRange.endDate.toString(),
+    //     nightStay: dateRange.nightStay
+    //   }
+    // })
+  }
 
   // method to format the data object
   formatData(items) {
@@ -92,18 +131,6 @@ class RoomProvider extends Component {
     this.setState({
       [name]: value
     }, this.filterRooms)
-  }
-
-  handleDateRange = (dateRange,nights) => {
-    this.setState({
-      ...this.state,
-      nightStay: nights,
-      dateRange: {
-        startDate: dateRange.startDate.toString(),
-        endDate: dateRange.endDate.toString(),
-        nightStay: nights
-      }
-    })
   }
 
   filterRooms = () => {

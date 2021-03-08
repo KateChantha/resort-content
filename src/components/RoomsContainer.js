@@ -4,18 +4,22 @@ import RoomList from './RoomList';
 import { withRoomConsumer } from '../context';
 import Loading from './Loading';
 
+import CheckAvailibility from './CheckAvailibility';
+
 /** ---------------------------------
  * Option with HOC withRoomConsumer()
  * ----------------------------------
  */
 const RoomsContainer = ({context}) => {
   const {loading, sortedRooms, rooms} = context;
+  console.log("in room container-CONTEXT", context)
 
   return loading
           ? <Loading />
           : (
               <div>
                 <RoomFilter rooms={rooms}/>
+                {/* <CheckAvailibility /> */}
                 <RoomList rooms={sortedRooms}/>
               </div>
             );
