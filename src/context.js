@@ -32,7 +32,6 @@ class RoomProvider extends Component {
     maxSize: 0,
     breakfast: false,
     pets: false,
-    // nightStay: 1,
     dateRange: {
       startDate: new Date().toString(),
       endDate: new Date().toString(),
@@ -42,7 +41,7 @@ class RoomProvider extends Component {
 
   handleDateRange = (dateRange) => {
 
-    //=====test====
+    //== Get DATA (componentDidmount) clone ==
     let rooms = this.formatData(items);
     let featuredRooms = rooms.filter(rm => rm.featured === true )
 
@@ -67,7 +66,7 @@ class RoomProvider extends Component {
       }
     })
 
-    //==== end of test ===
+    //==== End of Get DATA ===
     
     // this.setState({
     //   ...this.state,
