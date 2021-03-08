@@ -9,16 +9,16 @@ import CheckAvailibility from '../components/CheckAvailibility';
 const Home = () => {
   return (
     <React.Fragment>
-      <Hero>
-        
-        <Banner title="luxurious rooms" subtitle="deluxe rooms starting at $299">
-        
-          <Link to="/rooms" className="btn-primary">
-            check availitbility
-          </Link>
-        </Banner>
-        <CheckAvailibility />
+      <Hero>    
+        <Banner title="luxurious rooms" subtitle="deluxe rooms starting at $299">      
+        </Banner>    
       </Hero>
+      <section>
+        <CheckAvailibility />
+        <Link to="/rooms" className="btn-primary">
+              check availitbility
+        </Link>
+      </section>
       <Servives />   
       <FeaturedRooms />
     </React.Fragment>
