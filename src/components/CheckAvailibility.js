@@ -67,7 +67,8 @@ const CheckAvailibility = ({context}) => {
   }
 
   useEffect(() => {
-    const nightStay = days_passed(startDate, endDate);
+    const nightStay = days_passed(startDate, endDate) || 1;
+    console.log("use effect in Checkavai- nightStaty",nightStay )
 
     handleDateRange({
       startDate: startDate,
@@ -100,7 +101,7 @@ const CheckAvailibility = ({context}) => {
         endDate={endDate}
         minDate={startDate}
         dateFormat="MMMM d, yyyy"
-      />
+      /> 
       
 
 

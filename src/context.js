@@ -41,15 +41,43 @@ class RoomProvider extends Component {
   };
 
   handleDateRange = (dateRange) => {
+
+    //=====test====
+    let rooms = this.formatData(items);
+    let featuredRooms = rooms.filter(rm => rm.featured === true )
+
+    // set up the maxPrice and maxSize from data in database
+    let maxPrice = Math.max(...rooms.map(item => item.price));
+    let maxSize = Math.max(...rooms.map(item => item.size));
+
     this.setState({
-      ...this.state,
-      // nightStay: nights,
+      rooms,
+      featuredRooms,
+      sortedRooms: rooms,
+      loading: false,
+      // when page mount, 
+      // set price range contol input active at maxPrice
+      price: maxPrice,
+      maxPrice,
+      maxSize,
       dateRange: {
         startDate: dateRange.startDate.toString(),
         endDate: dateRange.endDate.toString(),
         nightStay: dateRange.nightStay
       }
     })
+
+    //==== end of test ===
+    
+    // this.setState({
+    //   ...this.state,
+    //   // nightStay: nights,
+    //   dateRange: {
+    //     startDate: dateRange.startDate.toString(),
+    //     endDate: dateRange.endDate.toString(),
+    //     nightStay: dateRange.nightStay
+    //   }
+    // })
   }
 
   // method to format the data object

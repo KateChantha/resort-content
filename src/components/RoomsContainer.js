@@ -10,6 +10,7 @@ import Loading from './Loading';
  */
 const RoomsContainer = ({context}) => {
   const {loading, sortedRooms, rooms} = context;
+  console.log("in room container-CONTEXT", context)
 
   return loading
           ? <Loading />
