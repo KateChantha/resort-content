@@ -54,7 +54,7 @@ const CheckAvailibility = ({context}) => {
 
 
   return (
-    <section className="filter-container check-avalibility-container">
+    <section className="filter-container">
       {/* <DateRange
         onChange={item => setDateRange({ ...dateRange, ...item })}
         ranges={[dateRange.selection1]}
@@ -63,7 +63,7 @@ const CheckAvailibility = ({context}) => {
 
       <form className="filter-form">
         {/* guests capacity  */}
-        <div className="form-group">
+        <div className="form-group check-avalibility-group">
           <label htmlFor="capacity">How Many Guests?</label>
           <select
             name="capacity"
