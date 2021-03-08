@@ -11,7 +11,8 @@ import './CheckAvailibility.css'
 // import 'react-date-range/dist/theme/default.css';
 //====== End of Old=======
 // ====== New======
-
+import DatePicker from 'react-datepicker';
+import 'react-datepicker/dist/react-datepicker.css';
 
 /** Helper Function **/ 
 const getUnique = (items, value) => {
@@ -32,7 +33,7 @@ const CheckAvailibility = ({context}) => {
           </option>
         ));
 
-
+  //===== OLD =======
   // const [dateRange, setDateRange] = useState({
   //   selection1: {
   //     startDate: addDays(new Date(), 0),
@@ -50,7 +51,13 @@ const CheckAvailibility = ({context}) => {
   //   // handleDateRange(nights)
   //   handleDateRange({...dateRange.selection1}, nights)
   // }, [dateRange])
+  //===== END OF OLD =======
+  
+  //===== NEW =======
+  const [startDate, setStartDate] = useState(new Date());
+  const [endDate, setEndDate] = useState(new Date());
 
+  //===== END OF NEW =======
 
 
   return (
@@ -59,6 +66,24 @@ const CheckAvailibility = ({context}) => {
         onChange={item => setDateRange({ ...dateRange, ...item })}
         ranges={[dateRange.selection1]}
       /> */}
+
+      <DatePicker
+        selected={startDate}
+        onChange={date => setStartDate(date)}
+        selectsStart
+        startDate={startDate}
+        endDate={endDate}
+        dateFormat="MMMM d, yyyy"
+      />
+      <DatePicker
+        selected={endDate}
+        onChange={date => setEndDate(date)}
+        selectsEnd
+        startDate={startDate}
+        endDate={endDate}
+        minDate={startDate}
+        dateFormat="MMMM d, yyyy"
+      />
 
 
       <form className="filter-form">
