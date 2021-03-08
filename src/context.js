@@ -34,11 +34,23 @@ class RoomProvider extends Component {
     pets: false,
     // nightStay: 1,
     dateRange: {
-      startDate: null,
-      endDate: null,
+      startDate: new Date().toString(),
+      endDate: new Date().toString(),
       nightStay: 1
     }
   };
+
+  handleDateRange = (dateRange) => {
+    this.setState({
+      ...this.state,
+      // nightStay: nights,
+      dateRange: {
+        startDate: dateRange.startDate.toString(),
+        endDate: dateRange.endDate.toString(),
+        nightStay: dateRange.nightStay
+      }
+    })
+  }
 
   // method to format the data object
   formatData(items) {
@@ -92,18 +104,6 @@ class RoomProvider extends Component {
     this.setState({
       [name]: value
     }, this.filterRooms)
-  }
-
-  handleDateRange = (dateRange,nights) => {
-    this.setState({
-      ...this.state,
-      nightStay: nights,
-      dateRange: {
-        startDate: dateRange.startDate.toString(),
-        endDate: dateRange.endDate.toString(),
-        nightStay: nights
-      }
-    })
   }
 
   filterRooms = () => {

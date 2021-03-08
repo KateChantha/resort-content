@@ -56,21 +56,23 @@ const CheckAvailibility = ({context}) => {
   //===== NEW =======
   const [startDate, setStartDate] = useState(new Date());
   const [endDate, setEndDate] = useState(new Date());
-  const [dateRange, setDateRange] = useState(1);
+  // const [dateRange, setDateRange] = useState(1);
 
-  console.log("startDate", startDate)
-  console.log("endDate", endDate)
-  console.log("dateRange", dateRange)
+  // console.log("startDate", startDate)
+  // console.log("endDate", endDate)
+  // console.log("dateRange", dateRange)
 
   function days_passed(start, end) {
     return Math.ceil((end - start) / 86400000);
   }
 
   useEffect(() => {
-    const nights = days_passed(startDate, endDate);
+    const nightStay = days_passed(startDate, endDate);
 
-    setDateRange(nights)
-    // handleDateRange(nights)
+    handleDateRange({
+      startDate: startDate,
+      endDate: endDate,
+      nightStay: nightStay})
   }, [endDate])
   //===== END OF NEW =======
 
