@@ -1,6 +1,7 @@
 import React from 'react';
 import Room from './Room';
 
+
 const RoomList = ({rooms}) => {
   if (rooms.length === 0) {
     return (
@@ -19,7 +20,11 @@ const RoomList = ({rooms}) => {
       <div className="roomslist-center">
         {
           rooms.map(item => (
-            <Room key={item.id} room={item} />
+            <Room 
+              key={item.id} 
+              room={item} 
+              keepRoomButton={true}
+            />
           ))
         }
       </div>

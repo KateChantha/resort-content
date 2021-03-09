@@ -12,6 +12,41 @@
   flex-direction: column;
 }
 
+.date-warapper {
+  border-top: solid 1px var(--primaryColor);
+  padding: 1rem 0;
+  margin-top: 1rem;
+}
+
+.pickedroom-image-warapper {
+  width: 150px;
+  margin-top: 1rem;
+}
+
+.pickedroom-image {
+  width: 100%;
+}
+
+.pickedroom-warapper {
+  padding-bottom: 1rem;
+  display: flex;
+  justify-content: space-between;
+  text-transform: capitalize;
+}
+
+.tax-warapper {
+  display: flex;
+  justify-content: space-between;
+}
+
+.total-warapper {
+  border-top: solid 1px var(--primaryColor);
+  padding: 1rem 0;
+  margin-top: 1rem;
+  display: flex;
+  justify-content: space-between;
+}
+
 @media screen and (min-width: 776px) {
   .about-your-stay {
     padding: 0 1rem;

@@ -1,10 +1,14 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import { Link } from 'react-router-dom';
 import PropTypes from 'prop-types';
 import defaultImg from '../images/room-1.jpeg';
+import { RoomContext } from "../context";
 
-const Room = ({ room }) => {
+const Room = ({ room, keepRoomButton }) => {
   const {name, slug, images, price} = room;
+
+  const context = useContext(RoomContext);
+  const {handlePickedRoom} = context;
 
   return (
     <article className="room">
@@ -18,7 +22,17 @@ const Room = ({ room }) => {
           features
         </Link>
       </div>
+      <Link to={`/rooms/${slug}`} className="btn-primary ">
       <p className="room-info">{name}</p>
+      </Link>
+      {/* <p className="room-info">{name}</p> */}
+      { keepRoomButton && 
+        <button 
+          className="booknow"
+          onClick={()=> handlePickedRoom( { roomName: name, price: price, image:images[0] })}
+        >Keep Room</button>
+      }
+      
     </article>
   )
 }
