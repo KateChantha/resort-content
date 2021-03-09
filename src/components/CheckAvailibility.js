@@ -43,32 +43,39 @@ const CheckAvailibility = ({context}) => {
   
 
   return (
-    <section className="filter-container">
-      <DatePicker
-        selected={startDate}
-        onChange={date => setStartDate(date)}
-        selectsStart
-        startDate={startDate}
-        endDate={endDate}
-        dateFormat="MMMM d, yyyy"
-      />
-      <DatePicker
-        selected={endDate}
-        onChange={date => setEndDate(date)}
-        selectsEnd
-        startDate={startDate}
-        endDate={endDate}
-        minDate={startDate}
-        dateFormat="MMMM d, yyyy"
-      /> 
+    <section className="check-avail-wraper">
+      <div className="datepicker-wrapper">
+        <label htmlFor="check in">Check In</label>
+        <DatePicker
+          selected={startDate}
+          onChange={date => setStartDate(date)}
+          selectsStart
+          startDate={startDate}
+          endDate={endDate}
+          dateFormat="MMMM d, yyyy"
+        />
+      </div>
       
-      <form className="filter-form">
+      <div className="datepicker-wrapper">
+        <label htmlFor="check put">Check Out</label>
+        <DatePicker
+          selected={endDate}
+          onChange={date => setEndDate(date)}
+          selectsEnd
+          startDate={startDate}
+          endDate={endDate}
+          minDate={startDate}
+          dateFormat="MMMM d, yyyy"
+        /> 
+      </div>
+      
+      <form className="">
         {/* guests capacity  */}
-        <div className="form-group check-avalibility-group">
+        <div className="capacity-wrapper">
           <label htmlFor="capacity">How Many Guests?</label>
           <select
             name="capacity"
-            id="capacity"
+            id="capacity-check-avail"
             onChange={handleChange}
             className="form-control"
             value={capacity}

@@ -13,7 +13,7 @@ const Home = () => {
         <Banner title="luxurious rooms" subtitle="deluxe rooms starting at $299">      
         </Banner>    
       </Hero>
-      <section>
+      <section  className="check-avail-container" >
         <CheckAvailibility />
         <Link to="/rooms" className="btn-primary">
               check availitbility
