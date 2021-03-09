@@ -4,7 +4,9 @@
   box-sizing: border-box;
 }
 :root {
-  --primaryColor: #af9a7d;
+  /* --primaryColor: #af9a7d; */
+  --primaryColor: #ae802a;
+  --secondaryColor:#f9f1e5 ;
   --mainWhite: #fff;
   --offWhite: #f7f7f7;
   --mainBlack: #222;
@@ -159,7 +161,8 @@ h6 {
 .defaultHero,
 .roomsHero { 
   /* subtract -66px by the navbar height */
-  min-height: calc(100vh - 66px); 
+  /* min-height: calc(100vh - 66px);  */
+  height: 75vh;
   background: url("./images/defaultBcg.jpeg") center/cover no-repeat;
   display: flex;
   align-items: center;
@@ -210,6 +213,15 @@ h6 {
   }
 }
 /* End of Banner */
+/* Check Availibility */
+.check-avail-container {
+  height: 25vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-evenly;
+}
+/* End of Check Availibility */
 /* Title */
 .section-title {
   text-align: center;

@@ -1,3 +1,25 @@
-.check-avalibility-group {
-  width: 25%;
+.check-avail-wraper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.datepicker-wrapper {
+  display: flex;
+  flex-direction: column;
+}
+
+.check-avail-container input {
+  padding: 5px;
+}
+
+.capacity-wrapper select {
+  padding: 4px;
+}
+
+@media screen and (min-width: 776px) {
+  .check-avail-wraper {
+    flex-direction: row;
+    justify-content: center;
+  }
 }

@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
 import { FaAlignRight } from "react-icons/fa";
 import logo from "../images/logo.svg";
+import './Navbar.css';
 
 export default class Navbar extends Component {
   state={
@@ -13,6 +14,7 @@ export default class Navbar extends Component {
 
   render() {
     return (
+      <>
       <nav className="navbar">
         <div className="nav-center">
           <div className="nav-header">
@@ -38,7 +40,10 @@ export default class Navbar extends Component {
             </li>
           </ul>
         </div>
+        
       </nav>
+      <div className='border-lining'></div>
+      </>
     )
   }
 }

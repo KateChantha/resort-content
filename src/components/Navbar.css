@@ -1,0 +1,7 @@
+.border-lining {
+  border-color: #ae802a;
+  border-top: 2px solid #c3b5a9;
+  border-bottom: 2px solid #c3b5a9;
+  height: 3px;
+  z-index: 10;
+}
