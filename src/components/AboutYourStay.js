@@ -3,6 +3,7 @@ import React from 'react';
 import { useContext } from 'react'; // works with FC
 import { RoomContext } from "../context";
 import Title from "./Title";
+import './AboutYourStay.css';
 
 const AboutYourStay = () => {
   const context = useContext(RoomContext);
@@ -16,18 +17,20 @@ const AboutYourStay = () => {
   }
 
   return (
-    <div>
+    <div className="about-your-stay">
       <Title title="about your stay" />
-      <div>
-        <span>Check-In</span>
-        <span>After 3:00 PM</span>
-      </div>
-      <div>
-        <span>Check-Out</span>
-        <span>Before 11:00 AM</span>
-      </div>
-      <p>{formatDate(dateRange.startDate)}</p>
-      <p>{formatDate(dateRange.endDate)}</p>
+      <section className="check-inout-section">
+        <div className="check-inout-wrapper">
+          <span>Check-In</span>
+          <span>After 3:00 PM</span>
+        </div>
+        <div className="check-inout-wrapper">
+          <span>Check-Out</span>
+          <span>Before 11:00 AM</span>
+        </div>
+      </section>
+      <span>{formatDate(dateRange.startDate)}</span>
+      <span> - {formatDate(dateRange.endDate)}</span>
       <p> {capacity}{capacity > 1 ? " Guests": " Guest" }</p>
       <p> {dateRange.nightStay}{dateRange.nightStay > 1 ? " Nights": " Night" }</p>
       <div></div>

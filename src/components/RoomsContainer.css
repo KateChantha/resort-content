@@ -1,0 +1,29 @@
+.rooms-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.rooms-container--yourstay {
+  width: 80vw;
+  background-color: beige;
+}
+
+@media screen and (min-width: 500px) {
+  .rooms-container--yourstay {
+    width: 60vw;
+  }
+}
+
+@media screen and (min-width: 776px) {
+  .rooms-container  {
+    flex-direction: row-reverse;
+    align-items: stretch;
+    /* align-items: flex-start; */
+  }
+
+  .rooms-container--yourstay {
+    width: 24vw;
+    min-width: 250px;
+  }
+}

@@ -1,0 +1,19 @@
+.about-your-stay {
+  padding: 0 5px;
+}
+
+.check-inout-section {
+  display: flex;
+  justify-content: space-between;
+}
+
+.check-inout-wrapper {
+  display: flex;
+  flex-direction: column;
+}
+
+@media screen and (min-width: 776px) {
+  .about-your-stay {
+    padding: 0 30px;
+  }
+}
