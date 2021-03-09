@@ -77,7 +77,7 @@ const CheckAvailibility = ({context}) => {
             name="capacity"
             id="capacity-check-avail"
             onChange={handleChange}
-            className="form-control"
+            className="form-control check-avail"
             value={capacity}
           >
             {roomCapacity}

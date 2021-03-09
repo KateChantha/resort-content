@@ -141,9 +141,6 @@ const RoomFilter = ({rooms}) => {
         </div>
         {/* end of extras type */}
       </form>
-      <h1>{dateRange.nightStay}</h1>
-      <h1>{dateRange.startDate}</h1>
-      <h1>{dateRange.endDate}</h1>
     </section>
   )
 }
