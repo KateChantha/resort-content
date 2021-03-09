@@ -3,8 +3,8 @@ import RoomFilter from './RoomFilter';
 import RoomList from './RoomList';
 import { withRoomConsumer } from '../context';
 import Loading from './Loading';
+import AboutYourStay from './AboutYourStay';
 
-import CheckAvailibility from './CheckAvailibility';
 
 /** ---------------------------------
  * Option with HOC withRoomConsumer()
@@ -18,8 +18,8 @@ const RoomsContainer = ({context}) => {
           ? <Loading />
           : (
               <div>
-                <RoomFilter rooms={rooms}/>
-                {/* <CheckAvailibility /> */}
+                <AboutYourStay />
+                <RoomFilter rooms={rooms}/>        
                 <RoomList rooms={sortedRooms}/>
               </div>
             );
