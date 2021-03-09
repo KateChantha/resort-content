@@ -162,7 +162,7 @@ h6 {
 .roomsHero { 
   /* subtract -66px by the navbar height */
   /* min-height: calc(100vh - 66px);  */
-  height: 75vh;
+  height: 50vh;
   background: url("./images/defaultBcg.jpeg") center/cover no-repeat;
   display: flex;
   align-items: center;
@@ -215,7 +215,6 @@ h6 {
 /* End of Banner */
 /* Check Availibility */
 .check-avail-container {
-  height: 25vh;
   display: flex;
   flex-direction: column;
   align-items: center;
