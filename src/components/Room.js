@@ -4,7 +4,7 @@ import PropTypes from 'prop-types';
 import defaultImg from '../images/room-1.jpeg';
 import { RoomContext } from "../context";
 
-const Room = ({ room }) => {
+const Room = ({ room, keepRoomButton }) => {
   const {name, slug, images, price} = room;
 
   const context = useContext(RoomContext);
@@ -26,10 +26,13 @@ const Room = ({ room }) => {
       <p className="room-info">{name}</p>
       </Link>
       {/* <p className="room-info">{name}</p> */}
-      <button 
-        className="booknow"
-        onClick={()=> handlePickedRoom( { roomName: name, price: price} )}
-      >Keep Room</button>
+      { keepRoomButton && 
+        <button 
+          className="booknow"
+          onClick={()=> handlePickedRoom( { roomName: name, price: price} )}
+        >Keep Room</button>
+      }
+      
     </article>
   )
 }

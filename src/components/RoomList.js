@@ -19,7 +19,11 @@ const RoomList = ({rooms}) => {
       <div className="roomslist-center">
         {
           rooms.map(item => (
-            <Room key={item.id} room={item} />
+            <Room 
+              key={item.id} 
+              room={item} 
+              keepRoomButton={true}
+            />
           ))
         }
       </div>
