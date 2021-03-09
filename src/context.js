@@ -36,8 +36,13 @@ class RoomProvider extends Component {
       startDate: new Date().toString(),
       endDate: new Date().toString(),
       nightStay: 1
-    }
+    },
+    pickedRoom: {}
   };
+
+  handlePickedRoom = (room) => {
+    this.setState({pickedRoom: room})
+  }
 
   handleDateRange = (dateRange) => {
 
@@ -188,7 +193,8 @@ class RoomProvider extends Component {
           ...this.state,
           getRoom: this.getRoom,
           handleChange: this.handleChange,
-          handleDateRange: this.handleDateRange
+          handleDateRange: this.handleDateRange,
+          handlePickedRoom: this.handlePickedRoom
         }}
       >
         {this.props.children}
