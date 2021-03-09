@@ -1,4 +1,4 @@
-import React, { useState, useContext } from 'react';
+import React, { useContext } from 'react';
 import { Link } from 'react-router-dom';
 import PropTypes from 'prop-types';
 import defaultImg from '../images/room-1.jpeg';
@@ -6,19 +6,9 @@ import { RoomContext } from "../context";
 
 const Room = ({ room }) => {
   const {name, slug, images, price} = room;
-  const [pickedRoom, setPickedRoom] = useState({})
 
   const context = useContext(RoomContext);
   const {handlePickedRoom} = context;
-
-  // const handlePickedRoom = () => {
-  //   setPickedRoom({
-  //     roomName: name,
-  //     price: price
-  //   })
-  // }
-
-  console.log("in Room.js context",context )
 
   return (
     <article className="room">
@@ -39,7 +29,7 @@ const Room = ({ room }) => {
       <button 
         className="booknow"
         onClick={()=> handlePickedRoom( { roomName: name, price: price} )}
-      >Book Now</button>
+      >Keep Room</button>
     </article>
   )
 }
