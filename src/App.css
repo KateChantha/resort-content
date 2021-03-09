@@ -22,7 +22,7 @@ body {
   padding-top: 66px;
   color: var(--mainBlack);
   background: var(--mainWhite);
-  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  font-family: Trebuchet MS,Verdana, Geneva, Tahoma, sans-serif;
   line-height: 1.4;
 }
 h1 {
@@ -231,11 +231,23 @@ h6 {
 /* End of Banner */
 /* Check Availibility */
 .check-avail-container {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  background-color: var(--mainBlack);
+}
+
+.check-avail-div {
+  width: 80%;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: space-evenly;
+  background-color: var(--darkGrey);
+  margin: 2rem 0;
+  padding: 1rem 0;
 }
+
 /* End of Check Availibility */
 /* Title */
 .section-title {
@@ -489,9 +501,10 @@ h6 {
 } */
 /* end of roomlist */
 /*  rooms fitler*/
-/* .filter-container {
-  padding: 5rem 0;
-} */
+.filter-container {
+  margin: 2rem 1rem;
+  border: solid 1px var(--mainBlack);
+}
 .filter-form {
   width: 60vw;
   margin: 0 auto;
@@ -505,8 +518,8 @@ h6 {
 }
 .form-group label {
   display: block;
-  letter-spacing: var(--mainSpacing);
-  margin-bottom: 0.5rem;
+  /* letter-spacing: var(--mainSpacing); */
+  margin-bottom: 0.25rem;
 }
 .form-control {
   width: 100%;

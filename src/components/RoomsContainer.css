@@ -23,7 +23,9 @@
   }
 
   .rooms-container--yourstay {
-    width: 24vw;
+    width: 40vw;
     min-width: 250px;
+    display: flex;
+    justify-content: center;
   }
 }
