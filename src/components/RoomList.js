@@ -1,6 +1,7 @@
 import React from 'react';
 import Room from './Room';
 
+
 const RoomList = ({rooms}) => {
   if (rooms.length === 0) {
     return (

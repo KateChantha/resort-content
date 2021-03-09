@@ -20,7 +20,7 @@ const RoomsContainer = ({context}) => {
           : (
               <div className="rooms-container">
                 <div className="rooms-container--yourstay">
-                  <AboutYourStay />
+                  <AboutYourStay rooms={sortedRooms}/>
                 </div>
                 <div className="rooms-container--list-filter">
                   <RoomFilter rooms={rooms}/>        

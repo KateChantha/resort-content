@@ -1,13 +1,13 @@
 
 import React from 'react';
-import { useContext } from 'react'; // works with FC
+import { useContext, useEffect } from 'react'; // works with FC
 import { RoomContext } from "../context";
 import Title from "./Title";
 import './AboutYourStay.css';
 
-const AboutYourStay = () => {
+const AboutYourStay = ({rooms}) => {
   const context = useContext(RoomContext);
-  const { capacity, dateRange, pickedRoom } = context;
+  const { capacity, dateRange, pickedRoom, handlePickedRoom } = context;
   
   const formatDate = (date) => {
     const dateArray = date.split(" ");
@@ -16,6 +16,12 @@ const AboutYourStay = () => {
   }
 
   const priceTimeNights = pickedRoom.price * dateRange.nightStay;
+
+  useEffect(() => {
+    if (rooms.length === 0) {
+      handlePickedRoom({})
+    }
+  }, [rooms])
 
   return (
     <div className="about-your-stay">
