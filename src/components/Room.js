@@ -29,7 +29,7 @@ const Room = ({ room, keepRoomButton }) => {
       { keepRoomButton && 
         <button 
           className="booknow"
-          onClick={()=> handlePickedRoom( { roomName: name, price: price} )}
+          onClick={()=> handlePickedRoom( { roomName: name, price: price, image:images[0] })}
         >Keep Room</button>
       }
       

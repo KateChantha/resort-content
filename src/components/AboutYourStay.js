@@ -30,24 +30,33 @@ const AboutYourStay = () => {
           <span>Before 11:00 AM</span>
         </div>
       </section>
-      <span>{formatDate(dateRange.startDate)}</span>
-      <span> - {formatDate(dateRange.endDate)}</span>
+      <div className="date-warapper">
+        <span>{formatDate(dateRange.startDate)}</span>
+        <span> - {formatDate(dateRange.endDate)}</span>
+      </div>
       <p> {capacity}{capacity > 1 ? " Guests": " Guest" }</p>
       <p> {dateRange.nightStay}{dateRange.nightStay > 1 ? " Nights": " Night" }</p>
-      <div>
+
+      { pickedRoom.image && <div className="pickedroom-image-warapper">
+        <img 
+          className="pickedroom-image"
+          src={pickedRoom.image } 
+          alt="selected room" />
+        </div>}
+      <div className="pickedroom-warapper">
         { pickedRoom.roomName && <span>{pickedRoom.roomName}</span>}
         { pickedRoom.price && <span> ${priceTimeNights}.00</span>}
       </div>
 
         { pickedRoom.price && (
-          <div>
+          <div className="tax-warapper">
             <span>Taxes and Fees</span>
             <span> ${ priceTimeNights*0.125 }</span>
           </div>
         )}
       
-      <div>
-        <span>Total</span>
+      <div className="total-warapper">
+        <span>Total:</span>
         { pickedRoom.price 
           ? <span> ${ priceTimeNights + (priceTimeNights*0.125) }</span>
           : <span>$0.00</span>
