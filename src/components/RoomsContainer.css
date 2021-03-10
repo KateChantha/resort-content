@@ -6,7 +6,7 @@
 
 .rooms-container--yourstay {
   width: 80vw;
-  background-color: beige;
+  /* background-color: var(--darkGrey); */
 }
 
 @media screen and (min-width: 500px) {
@@ -26,6 +26,6 @@
     width: 40vw;
     min-width: 250px;
     display: flex;
-    justify-content: center;
+    /* justify-content: center; */
   }
 }

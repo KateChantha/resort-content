@@ -3,6 +3,7 @@ import { Link } from 'react-router-dom';
 import PropTypes from 'prop-types';
 import defaultImg from '../images/room-1.jpeg';
 import { RoomContext } from "../context";
+import './Room.css';
 
 const Room = ({ room, keepRoomButton }) => {
   const {name, slug, images, price} = room;
@@ -22,17 +23,17 @@ const Room = ({ room, keepRoomButton }) => {
           features
         </Link>
       </div>
-      <Link to={`/rooms/${slug}`} className="btn-primary ">
-      <p className="room-info">{name}</p>
-      </Link>
-      {/* <p className="room-info">{name}</p> */}
-      { keepRoomButton && 
-        <button 
-          className="booknow"
-          onClick={()=> handlePickedRoom( { roomName: name, price: price, image:images[0] })}
-        >Keep Room</button>
-      }
-      
+      <div className="room-btm-wrapper">
+        <Link to={`/rooms/${slug}`} className="btn-underline">
+          <p className="room-info">{name}</p>
+        </Link>
+        { keepRoomButton && 
+          <button 
+            className="booknow btn-primary"
+            onClick={()=> handlePickedRoom( { roomName: name, price: price, image:images[0] })}
+          >Keep Room</button>
+        }
+      </div>
     </article>
   )
 }

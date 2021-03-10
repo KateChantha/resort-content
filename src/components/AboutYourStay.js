@@ -2,7 +2,7 @@
 import React from 'react';
 import { useContext, useEffect } from 'react'; // works with FC
 import { RoomContext } from "../context";
-import Title from "./Title";
+import SubTitle from "./SubTitle";
 import './AboutYourStay.css';
 
 const AboutYourStay = ({rooms}) => {
@@ -25,7 +25,8 @@ const AboutYourStay = ({rooms}) => {
 
   return (
     <div className="about-your-stay">
-      <Title title="about your stay" />
+     <SubTitle title="about your stay" />
+      
       <section className="check-inout-section">
         <div className="check-inout-wrapper">
           <span>Check-In</span>

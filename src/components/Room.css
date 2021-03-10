@@ -1,0 +1,4 @@
+.room-btm-wrapper {
+  display: flex;
+  justify-content: space-between;
+}

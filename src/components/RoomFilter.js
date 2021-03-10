@@ -1,7 +1,7 @@
 import React from 'react';
 import { useContext } from 'react'; // works with FC
 import { RoomContext } from "../context";
-import Title from "./Title";
+import SubTitle from "./SubTitle";
 
 
 /** Helper Function **/ 
@@ -51,7 +51,7 @@ const RoomFilter = ({rooms}) => {
 
   return (
     <section className="filter-container">
-      <Title title="search rooms" />
+    <SubTitle title="search rooms"/>
       <form className="filter-form">
         {/* select type */}
         <div className="form-group">
