@@ -130,7 +130,13 @@ h6 {
   /* letter-spacing: var(--mainSpacing); */
   padding: 5px;
   /* border: solid 1px var(--offWhite); */
-}  
+}
+
+.nav-header h2 {
+  /* font-size: 2em; */
+  margin-bottom: 0;
+  color: var(--primaryColor);
+}
 .nav-btn {
   background: transparent;
   border: none;
@@ -193,7 +199,7 @@ h6 {
 .roomsHero { 
   /* subtract -66px by the navbar height */
   /* min-height: calc(100vh - 66px);  */
-  height: 50vh;
+  height: 40vh;
   background: url("./images/hotel-outdoor-fire-pit.jpg") center/cover no-repeat;
   display: flex;
   align-items: center;
@@ -201,7 +207,7 @@ h6 {
 }
 .roomsHero {
   background-image: url("./images/room-2.jpeg");
-  min-height: 60vh;
+  /* min-height: 60vh; */
 }
 /* End of Hero */
 /* Banner */
@@ -275,6 +281,15 @@ h6 {
   text-transform: capitalize;
   margin-bottom: 1rem;
 }
+
+.section-subtitle h6 {
+  font-size: 1.5rem;
+  color: var(--primaryColor);
+  text-transform: capitalize;
+  text-align: center;
+  margin-bottom: 1rem;
+}
+
 .section-title div {
   width: 5rem;
   height: 5px;
@@ -288,7 +303,7 @@ h6 {
   padding: 5rem 0;
 }
 .services {
-  background: var(--darkGrey);
+  /* background: var(--darkGrey); */
   text-align: center;
 }
 .services-center {
@@ -491,9 +506,10 @@ h6 {
 }
 /* end of single room*/
 /* roomlist */
-/* .roomslist {
-  padding: 5rem 0;
-} */
+.roomslist {
+  /* padding: 5rem 0; */
+  margin: 0 1rem;
+}
 .roomslist-center {
   /* width: 80vw; */
   margin: 0 auto;
@@ -518,14 +534,15 @@ h6 {
 /*  rooms fitler*/
 .filter-container {
   margin: 2rem 1rem;
-  border: solid 1px var(--mainBlack);
+  border: solid 3px var(--mainBlack);
 }
 .filter-form {
   width: 60vw;
   margin: 0 auto;
+  margin-bottom: 1rem;
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(202px, 1fr));
-  grid-row-gap: 2rem;
+  grid-row-gap: 1rem;
   grid-column-gap: 40px;
 }
 .form-group {
@@ -533,8 +550,9 @@ h6 {
 }
 .form-group label {
   display: block;
-  /* letter-spacing: var(--mainSpacing); */
   margin-bottom: 0.25rem;
+  color: rgb(124, 124, 124);
+  font-weight: 700;
 }
 .form-control {
   width: 100%;
