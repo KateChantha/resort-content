@@ -14,7 +14,7 @@ const getUnique = (items, value) => {
 const CheckAvailibility = ({context}) => {
   const {rooms} = context;
   const contextFilter = useContext(RoomContext);
-  const { handleChange, capacity, handleDateRange, dateRange } = contextFilter;
+  const { handleChange, capacity, handleDateRange } = contextFilter;
   const [startDate, setStartDate] = useState(new Date());
   const [endDate, setEndDate] = useState(startDate);
 

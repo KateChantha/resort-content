@@ -21,7 +21,7 @@ const AboutYourStay = ({rooms}) => {
     if (rooms.length === 0) {
       handlePickedRoom({})
     }
-  }, [rooms])
+  }, [rooms, handlePickedRoom])
 
   return (
     <div className="about-your-stay">
