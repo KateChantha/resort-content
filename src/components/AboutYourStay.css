@@ -50,6 +50,6 @@
 @media screen and (min-width: 776px) {
   .about-your-stay {
     padding: 0 1rem;
-    max-width: 350px;
+    /* max-width: 350px; */
   }
 }

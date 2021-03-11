@@ -20,7 +20,7 @@ const Room = ({ room, keepRoomButton }) => {
           <p>per night</p>
         </div>
         <Link to={`/rooms/${slug}`} className="btn-primary room-link">
-          features
+          view details
         </Link>
       </div>
       <div className="room-btm-wrapper">

@@ -3,15 +3,18 @@
   flex-direction: column;
   align-items: center;
 }
+.rooms-container--list-filter {
+  max-width: 1200px;
+}
 
 .rooms-container--yourstay {
-  width: 80vw;
+  /* width: 80vw; */
   /* background-color: var(--darkGrey); */
 }
 
 @media screen and (min-width: 500px) {
   .rooms-container--yourstay {
-    width: 60vw;
+    /* width: 60vw; */
   }
 }
 
@@ -19,12 +22,14 @@
   .rooms-container  {
     flex-direction: row-reverse;
     align-items: stretch;
+    justify-content: center;
     /* align-items: flex-start; */
   }
 
   .rooms-container--yourstay {
-    width: 40vw;
-    min-width: 250px;
+    /* width: 40vw; */
+    max-width: 400px;
+    min-width: 300px;
     display: flex;
     /* justify-content: center; */
   }
